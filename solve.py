@@ -24,8 +24,8 @@ if __name__ == '__main__':
     parser.add_argument('word')
     args = parser.parse_args()
     word = args.word
-    possibilites = permute(word)
-    possibilites.sort()
-    possibilites.sort(key=len)
-    for possibility in possibilites:
+    possibilities = permute(word)
+    possibilities.sort()
+    possibilities.sort(key=len)
+    for possibility in possibilities:
         print(possibility)
