@@ -7,17 +7,13 @@ D = enchant.Dict("en_US")
 
 
 def permute(word):
-    words = []
+    words = set()
     for i in range(3, 10):
-        if len(word) > 10:
-            pass
-        else:
-            permuations = itertools.permutations(word, i)
-            permuations = set(''.join(p) for p in permuations)
-            for permuation in permuations:
-                if D.check(permuation):
-                    words.append(permuation)
-    return words
+        permuations = [''.join(p) for p in itertools.permutations(word, i)]
+        for permuation in permuations:
+            if D.check(permuation):
+                words.add(permuation)
+    return list(words)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
