@@ -6,9 +6,9 @@ import itertools
 D = enchant.Dict("en_US")
 
 
-def permute(word):
+def permute(word, min_length=3, max_length=10):
     words = set()
-    for i in range(3, 10):
+    for i in range(min_length, max_length):
         ps = itertools.permutations(word, i)
         permuations = [''.join(p) for p in ps]
         for permuation in permuations:
