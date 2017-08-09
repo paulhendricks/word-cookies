@@ -9,7 +9,8 @@ D = enchant.Dict("en_US")
 def permute(word):
     words = set()
     for i in range(3, 10):
-        permuations = [''.join(p) for p in itertools.permutations(word, i)]
+        ps = itertools.permutations(word, i)
+        permuations = [''.join(p) for p in ps]
         for permuation in permuations:
             if D.check(permuation):
                 words.add(permuation)
